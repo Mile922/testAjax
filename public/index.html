@@ -15,6 +15,22 @@
 <div id="BtCnt">
   <h3>按钮点击了0次</h3>
 </div>
+<script>
+  function BtCount() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("BtCnt").innerHTML =
+        this.responseText;
+      }
+      else document.getElementById("BtCnt").innerHTML = 
+      "服务器无反应";
+    };
+    xhttp.open("GET", "/BtCount", true);
+    xhttp.send();
+  }
+  </script>
+
 
 <script>
 function loadDoc() {
